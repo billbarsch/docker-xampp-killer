@@ -1,0 +1,41 @@
+version: '3.5'
+
+services:
+  xamppdev:
+    build: .
+    container_name: xamppdev
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ..:/var/www/html
+    depends_on:
+      - xamppdevdb
+    networks:
+      backend:
+        aliases:
+          - xamppdev
+
+  xamppdevdb:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    container_name: xamppdevdb
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: database1
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    volumes:
+      - dbvolumexampp:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      backend:
+        aliases:
+          - xamppdevdb
+volumes:
+  dbvolumexampp: null
+
+networks:
+  backend:
+    name: xamppnetwork

@@ -1,0 +1,18 @@
+{
+	"name": "Your Project",
+	"workspaceFolder": "/var/www/html",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "xamppdev",
+	"extensions": [
+		"gerane.theme-dark-dracula",
+		"irongeek.vscode-env",
+		"ms-azuretools.vscode-docker",
+		"pkief.material-icon-theme",
+		"derek-nextty.openapi-viewer",
+		"bmewburn.vscode-intelephense-client",
+		"ms-azuretools.vscode-docker",
+		"onecentlin.laravel5-snippets",
+		"ryannaddy.laravel-artisan"
+	],
+	"shutdownAction": "stopCompose"
+}
